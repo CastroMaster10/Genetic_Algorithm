@@ -119,9 +119,6 @@ def algoritmoGenetico(poblacion_inicial,pesos,beneficios,factibilidad,pesoMaximo
 
 
             
-
-            
-            
 # Definir los pesos de los contenedores del problema1
 pesos1 = [61,58,92,50,108,83,93,101,54,50,72,51,100,108,91,112,66,58,110,73]
 beneficios1 = [1100,1147,1442,1591,1078,1385,1777,1196,1753,1371,1517,1675,1193,1177,1365,1143,1314,1526,1470,1605] #beneficios por los contenedores
@@ -138,12 +135,14 @@ tiemposPromedio = []
 soluciones = []
 
 for i in range(200):
+
     start_time = timeit.default_timer()
-    poblacionFinal1 = algoritmoGenetico(poblacion_inicial,pesos1,beneficios1,factibilidad=True,pesoMaximo=800,n=100)
+    poblacionFinal1 = algoritmoGenetico(poblacion_inicial,pesos1,beneficios1,factibilidad=False,pesoMaximo=800,n=100)
     end_time = timeit.default_timer()
     execution_time =  end_time - start_time
     tiemposPromedio.append(execution_time)
-    soluciones.append(list(poblacionFinal1.items())[-1])
+    soluciones.append(list(poblacionFinal1.items())[-1][-1])
+
 #print(poblacionFinal1)
 print(f'\n Tiempo de ejecucion promedio del algoritmo: {statistics.mean(tiemposPromedio)}')
 print(f'\n Funcion objetivo (promedio): {statistics.mean(soluciones)}')
