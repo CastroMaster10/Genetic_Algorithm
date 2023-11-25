@@ -1,2 +1,3 @@
-# Genetic_Algorithm
-genetic algorithm
+# Genetic Algorithm for the Knapsack problem
+
+Genetic algorithm for the knapsack problem
